@@ -1,0 +1,14 @@
+com/axelor/service/impl/ContactServiceImpl.java
+ com.axelor.service.impl.ContactServiceImpl
+com/axelor/service/ContactService.java
+ com.axelor.service.ContactService
+com/axelor/model/Contact.java
+ com.axelor.model.Contact
+com/axelor/config/RestEasyConfig.java
+ com.axelor.config.RestEasyConfig
+com/axelor/config/GuiceConfig.java
+ com.axelor.config.GuiceConfig
+com/axelor/controller/ContactController.java
+ com.axelor.controller.ContactController
+com/axelor/config/ServletConfig.java
+ com.axelor.config.ServletConfig
