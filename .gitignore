@@ -2,7 +2,9 @@
 *.class
 *.build
 *.gradle
-
+.idea
+.settings
+.project
 # Log file
 *.log
 
