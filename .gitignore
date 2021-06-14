@@ -5,7 +5,8 @@
 .project
 .classpath
 /bin
-
+.idea
+.settings
 # Log file
 *.log
 
