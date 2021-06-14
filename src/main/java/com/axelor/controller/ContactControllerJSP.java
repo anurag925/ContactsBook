@@ -50,6 +50,16 @@ public class ContactControllerJSP {
 		return new View("Search.jsp",contactList,"searchList");
 	}
 	
+	@GET
+	@Path("contact/display/{id}")
+	@Produces(MediaType.TEXT_HTML)
+	public Response  displayContact(@PathParam("id") int id) throws IOException {
+		
+//		System.out.println(name);
+		List<Contact> contactList = contactService.getContact(id);
+		return Response.ok(contactList.toString()).build();
+	}
+	
 	@POST
 	@Path("/contact")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -82,11 +92,13 @@ public class ContactControllerJSP {
 		return Response.ok().entity("deleted").build();
 	}
 	
-	@PUT
-	@Path("/contact/{id}")
+	@POST
+	@Path("/contact/edit")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response updateContact(@PathParam("id") int id,Contact contact) {
+	public Response updateContact(@QueryParam("id") int id,@FormParam("name") String name,  @FormParam("number") int number) {
+		Contact contact=new Contact();
+		contact.setId(id).setName(name).setNumber(number);
 		try {
 			contactService.updateContact(id,contact);
 		}
@@ -98,4 +110,5 @@ public class ContactControllerJSP {
 		List<Contact> contactList = contactService.getContact(id);	
 		return Response.ok(contactList).build();
 	}
+	
 }

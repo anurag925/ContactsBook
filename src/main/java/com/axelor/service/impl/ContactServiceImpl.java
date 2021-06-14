@@ -9,6 +9,8 @@ import com.google.inject.persist.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.validation.constraints.Email;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -43,8 +45,7 @@ public class ContactServiceImpl implements ContactService {
     @Transactional
     public void insertContact(Contact contact) {
     	EntityManager em = emp.get();
-//    	System.out.println(contact);
-    	em.merge(contact);
+    	em.persist(contact);
     	em.close();
     }
 
@@ -53,9 +54,8 @@ public class ContactServiceImpl implements ContactService {
 	@Transactional
 	public void deleteContact(int id) {
 		EntityManager em = emp.get();
-		Query query=em.createQuery("delete from Contact where id=:id");
-		query.setParameter("id", id);
-		query.executeUpdate();
+		Contact contact=em.find(Contact.class, id);
+		em.remove(contact);
 		em.close();
 	}
 

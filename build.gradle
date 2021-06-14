@@ -1,0 +1,60 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'eclipse'
+    id 'eclipse-wtp'
+}
+
+group 'com.axelor'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-core
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-core', version: '4.6.0.Final'
+
+    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxb-provider
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-jaxb-provider', version: '4.6.0.Final'
+
+    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-servlet-initializer
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-servlet-initializer', version: '4.6.0.Final'
+
+    // https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-guice
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-guice', version: '4.6.0.Final'
+
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.31.Final'
+
+    // https://mvnrepository.com/artifact/com.google.inject.extensions/guice-persist
+    implementation group: 'com.google.inject.extensions', name: 'guice-persist', version: '5.0.1'
+
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    
+   	// https://mvnrepository.com/artifact/com.google.inject/guice
+	implementation group: 'com.google.inject', name: 'guice', version: '5.0.1'
+	
+	// https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-html
+	implementation group: 'org.jboss.resteasy', name: 'resteasy-html', version: '4.6.0.Final'
+	
+	// https://mvnrepository.com/artifact/javax.servlet/jstl
+	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+	
+	// https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api
+	implementation group: 'javax.servlet.jsp.jstl', name: 'jstl-api', version: '1.2'
+	    
+	// https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jackson2-provider
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-jackson2-provider', version: '4.6.0.Final'
+	
+	
+
+}

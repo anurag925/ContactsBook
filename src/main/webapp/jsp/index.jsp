@@ -67,7 +67,7 @@
 			<td>${contact.id}</td>
 			<td>${contact.name}</td>
 			<td>${contact.number}</td>
-			<td><a href="/ContactBook/jsp/contact/display/${contact.id}"><input type="button" value="Edit"></a></td>
+			<td><a href="/ContactsBook/jsp/contact/display/${contact.id}"><input type="button" value="Edit"></a></td>
 			<td><a href="/ContactsBook/jsp/contact/delete/${contact.id}"><input type="button" Value="Delete"></a></td>
 		</tr>	
 	</c:forEach>	
